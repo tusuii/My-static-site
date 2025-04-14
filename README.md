@@ -1,9 +1,16 @@
-# Static Astro Demo
-A barebones Astro (SSG) site showcasing [Sevalla's static site hosting](https://sevalla.com/static-site-hosting/).
+# My Portfolio Website
 
----
+A modern, responsive portfolio website built with Astro, showcasing my professional experience, skills, and certifications. The site features a clean design with interactive elements and smooth animations.
 
-Sevalla is the intuitive platform and the perfect home for your web projects. Deploy applications, databases, and static sites effortlessly.
+## ✨ Features
+
+- 🎯 Modern and responsive design
+- 🌟 Interactive particle background
+- 📱 Mobile-friendly layout
+- 🎨 Beautiful glassmorphic UI elements
+- 📜 Comprehensive skills and certifications display
+- 💼 Detailed project showcase
+- 📚 Education and experience sections
 
 ## 🚀 Project Structure
 
@@ -42,6 +49,18 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## 🎨 Technologies Used
 
-Feel free to check [our documentation](https://docs.sevalla.com) or jump into our [Discord server](https://discord.gg/sevalla).
+- [Astro](https://astro.build) - Static Site Generator
+- [Particles.js](https://vincentgarreau.com/particles.js/) - Interactive background
+- Modern CSS features including:
+  - Flexbox and Grid layouts
+  - CSS Variables
+  - Glassmorphism effects
+  - Smooth transitions and animations
+
+## 🔗 Connect with Me
+
+- [LinkedIn](https://www.linkedin.com/in/subodh-kamble-16a237168)
+- [GitHub](https://github.com/tusuii)
+- Email: subodhkamble099@gmail.com
