@@ -1,0 +1,98 @@
+---
+---
+<section id="projects" class="section">
+    <div class="container">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="card project-card">
+                <h3>🎬 Hotstar Clone CI/CD</h3>
+                <p class="project-description">
+                    Implemented end-to-end CI/CD pipeline for a Hotstar streaming platform clone using modern DevOps toolchain.
+                </p>
+                <ul class="achievements">
+                    <li>Set up multi-node infrastructure with Jenkins, Nexus, SonarQube, and Tomcat across EC2 instances</li>
+                    <li>Automated build and deployment process using shell scripts and Maven</li>
+                    <li>Integrated code quality gates and artifact storage within Jenkins pipeline</li>
+                    <li>Configured Amazon S3 backup solution for application assets</li>
+                    <li>Deployed across Amazon Linux 2 & Ubuntu 24.04 EC2 instances</li>
+                </ul>
+            </div>
+
+            <div class="card project-card">
+                <h3>🎥 Netflix Clone CI/CD</h3>
+                <p class="project-description">
+                    Deployed a Netflix Clone web application on AWS with a fully automated CI/CD pipeline using Git, GitHub, Jenkins, SonarQube, Nexus, k8s and Docker.
+                </p>
+                <ul class="achievements">
+                    <li>Leveraged Apache Tomcat automating the build-test-deploy lifecycle</li>
+                    <li>Implemented code quality checks and artifact versioning</li>
+                    <li>Achieved 70% faster deployments and 40% fewer post-deploy issues</li>
+                    <li>Enabled seamless rollouts using containers</li>
+                </ul>
+            </div>
+
+            <div class="card project-card">
+                <h3>AWS 3 Tier Architecture WebApp</h3>
+                <p class="project-description">
+                    Designed and implemented a scalable three-tier architecture on AWS with industry best practices.
+                </p>
+                <ul class="achievements">
+                    <li>Implemented Auto Scaling Groups and ELB in the application tier for high availability</li>
+                    <li>Utilized Amazon S3 and CloudFront for static file hosting and CDN-based content delivery, reducing latency by 30%</li>
+                    <li>Configured Multi-AZ Amazon RDS with CloudWatch monitoring</li>
+                    <li>Secured the stack using IAM, Security Groups, and VPC best practices</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        color: var(--text);
+    }
+
+    .projects-grid {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .project-card {
+        height: 100%;
+    }
+
+    .project-card h3 {
+        font-size: 1.5rem;
+        margin: 0 0 1rem 0;
+        color: var(--accent);
+    }
+
+    .project-description {
+        margin-bottom: 1rem;
+        line-height: 1.6;
+    }
+
+    .achievements {
+        margin: 0;
+        padding-left: 1.5rem;
+    }
+
+    .achievements li {
+        margin-bottom: 0.5rem;
+        line-height: 1.6;
+    }
+
+    .achievements li:last-child {
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+        .projects-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
