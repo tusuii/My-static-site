@@ -4,6 +4,50 @@
     <div class="container">
         <h2>Projects</h2>
         <div class="projects-grid">
+
+            <div class="card project-card">
+                <h3>🧠 Flask Quiz Application</h3>
+                <p class="project-description">
+                    Built a full-featured quiz application using Flask with CI/CD integration, containerization, and cloud-native deployment for scalable performance and monitoring.
+                </p>
+                <ul class="achievements">
+                    <li>Designed a modular quiz system loading YAML-based questions with PostgreSQL-backed persistent storage</li>
+                    <li>Implemented secure user authentication, real-time scoring, and admin dashboard for quiz and user management</li>
+                    <li>Dockerized the app with multi-stage builds and deployed using Kubernetes on AWS for production</li>
+                    <li>Set up Jenkins-based CI/CD pipeline with GitHub Actions, Docker Hub integration, and automated testing (~80% coverage)</li>
+                    <li>Integrated Prometheus, Grafana, and RabbitMQ for monitoring, visualization, and asynchronous task processing</li>
+                </ul>
+            </div>   
+            
+            <div class="card project-card">
+                <h3>🛡️ Insurance Management System</h3>
+                <p class="project-description">
+                    Developed a comprehensive insurance management system using Spring Boot, with full CI/CD automation and infrastructure as code implementation following industry best DevOps practices.
+                </p>
+                <ul class="achievements">
+                    <li>Built backend APIs using Java and Spring Boot, packaged with Maven, and containerized via Docker</li>
+                    <li>Orchestrated deployments using Kubernetes (Minikube locally) and Docker Compose on AWS cloud infrastructure</li>
+                    <li>Implemented end-to-end CI/CD pipeline using Jenkins, with automated testing, building, and deployment stages</li>
+                    <li>Provisioned and managed infrastructure using Terraform, enabling reproducible environments across dev/staging</li>
+                    <li>Used Ansible for automated server configuration and environment setup, ensuring consistency and scalability</li>
+                </ul>
+            </div>
+            
+
+            <div class="card project-card">
+                <h3>🩺 Medicure Healthcare App</h3>
+                <p class="project-description">
+                    Developed a comprehensive healthcare management application using Spring Boot, offering seamless access to medical services for patients and providers.
+                </p>
+                <ul class="achievements">
+                    <li>Enabled patient registration, provider directory, and appointment scheduling features</li>
+                    <li>Built RESTful APIs for third-party system integration and responsive web interface</li>
+                    <li>Containerized the application using Docker and deployed using Kubernetes</li>
+                    <li>Integrated Prometheus and Grafana for real-time monitoring and metrics visualization</li>
+                    <li>Technology stack includes Java 8, Spring Boot 2.7.4, Maven, and Jenkins for CI/CD</li>
+                </ul>
+            </div>
+
             <div class="card project-card">
                 <h3>🎬 Hotstar Clone CI/CD</h3>
                 <p class="project-description">
@@ -63,12 +107,14 @@
 
     .project-card {
         height: 100%;
+        padding: 1rem;
     }
 
     .project-card h3 {
         font-size: 1.5rem;
         margin: 0 0 1rem 0;
         color: var(--accent);
+        padding: 1rem;
     }
 
     .project-description {
