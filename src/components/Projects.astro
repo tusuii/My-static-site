@@ -3,90 +3,88 @@
 <section id="projects" class="section">
     <div class="container">
         <h2>Projects</h2>
+
+        <h3 class="section-subtitle">Client Work</h3>
+        <div class="projects-grid featured-grid">
+
+            <div class="card project-card featured-card">
+                <div class="client-badge">Client Work</div>
+                <h4>🕶️ Lenskart 'B' Smart Glasses — Cloud Infrastructure</h4>
+                <p class="project-meta">Lenskart × Google · Jun 2024 – Present</p>
+                <p class="tech-stack">Kubernetes · ArgoCD · Jenkins · AWS · GCP · Terraform · Istio · Prometheus · Grafana · ELK · Velero</p>
+                <ul class="achievements">
+                    <li>Production Kubernetes infra for 2M+ monthly users — multi-cluster AWS/GCP for HA & DR</li>
+                    <li>Blue-Green deployments via ArgoCD/Istio — zero-downtime, progressive traffic shifting (10%→100%), instant rollback</li>
+                    <li>GitOps for 30+ microservices with RBAC, automated sync — 99.97% deployment success</li>
+                    <li>CI/CD with automated testing, Trivy/SonarQube security scanning, Nexus — release cycle 2 weeks → 2 days</li>
+                    <li>Observability: Prometheus exporters, 50+ Grafana dashboards, ELK for 40+ services</li>
+                    <li>Cloud costs optimized 35% via right-sizing, spot instances, intelligent auto-scaling</li>
+                    <li>DR with Velero: RPO ≤15min, RTO ≤1hr via multi-region replication</li>
+                </ul>
+            </div>
+
+            <div class="card project-card featured-card">
+                <div class="client-badge">Client Work</div>
+                <h4>🏥 AIIMS Delhi Chikitsa Healthcare Platform</h4>
+                <p class="project-meta">AIIMS (Govt Hospital) · Jan 2024 – Dec 2024</p>
+                <p class="tech-stack">GKE · Docker · Jenkins · Cloud Functions · Terraform · TensorFlow Serving · FastAPI · Kubernetes</p>
+                <ul class="achievements">
+                    <li>Led DevOps for Aarogyam (mobile health AI) & TVAK (dermatology AI) — 30K+ monthly consultations</li>
+                    <li>Deployed AI microservices on GKE with HPA — 10K+ concurrent requests, ≤2s API response times</li>
+                    <li>ML serving infra (Kubernetes, TensorFlow Serving, Cloud Functions) — model versioning, GPU nodes, automated retraining</li>
+                    <li>CI/CD with model validation, containerization, progressive deployment — model deployment 2 days → 4 hours</li>
+                    <li>HIPAA-aligned security: encryption at-rest/in-transit, IAM, VPC Service Controls, audit logging</li>
+                    <li>Hybrid cloud (on-premise + GCP) with VPN/Interconnect for govt data sovereignty</li>
+                    <li>ML costs optimized 45% via preemptible VMs, Cloud Functions pay-per-use</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <h3 class="section-subtitle personal-subtitle">Personal Projects</h3>
         <div class="projects-grid">
 
             <div class="card project-card">
-                <h3>🧠 Flask Quiz Application</h3>
-                <p class="project-description">
-                    Built a full-featured quiz application using Flask with CI/CD integration, containerization, and cloud-native deployment for scalable performance and monitoring.
-                </p>
+                <h4>🧠 Flask Quiz Application</h4>
+                <p class="tech-stack">Docker · Kubernetes · AWS · Jenkins · Prometheus · Grafana</p>
                 <ul class="achievements">
-                    <li>Designed a modular quiz system loading YAML-based questions with PostgreSQL-backed persistent storage</li>
-                    <li>Implemented secure user authentication, real-time scoring, and admin dashboard for quiz and user management</li>
-                    <li>Dockerized the app with multi-stage builds and deployed using Kubernetes on AWS for production</li>
-                    <li>Set up Jenkins-based CI/CD pipeline with GitHub Actions, Docker Hub integration, and automated testing (~80% coverage)</li>
-                    <li>Integrated Prometheus, Grafana, and RabbitMQ for monitoring, visualization, and asynchronous task processing</li>
-                </ul>
-            </div>   
-            
-            <div class="card project-card">
-                <h3>🛡️ Insurance Management System</h3>
-                <p class="project-description">
-                    Developed a comprehensive insurance management system using Spring Boot, with full CI/CD automation and infrastructure as code implementation following industry best DevOps practices.
-                </p>
-                <ul class="achievements">
-                    <li>Built backend APIs using Java and Spring Boot, packaged with Maven, and containerized via Docker</li>
-                    <li>Orchestrated deployments using Kubernetes (Minikube locally) and Docker Compose on AWS cloud infrastructure</li>
-                    <li>Implemented end-to-end CI/CD pipeline using Jenkins, with automated testing, building, and deployment stages</li>
-                    <li>Provisioned and managed infrastructure using Terraform, enabling reproducible environments across dev/staging</li>
-                    <li>Used Ansible for automated server configuration and environment setup, ensuring consistency and scalability</li>
-                </ul>
-            </div>
-            
-
-            <div class="card project-card">
-                <h3>🩺 Medicure Healthcare App</h3>
-                <p class="project-description">
-                    Developed a comprehensive healthcare management application using Spring Boot, offering seamless access to medical services for patients and providers.
-                </p>
-                <ul class="achievements">
-                    <li>Enabled patient registration, provider directory, and appointment scheduling features</li>
-                    <li>Built RESTful APIs for third-party system integration and responsive web interface</li>
-                    <li>Containerized the application using Docker and deployed using Kubernetes</li>
-                    <li>Integrated Prometheus and Grafana for real-time monitoring and metrics visualization</li>
-                    <li>Technology stack includes Java 8, Spring Boot 2.7.4, Maven, and Jenkins for CI/CD</li>
+                    <li>Modular quiz system with YAML-based questions, PostgreSQL-backed storage, and admin dashboard</li>
+                    <li>Dockerized with multi-stage builds and deployed on Kubernetes on AWS for production scale</li>
+                    <li>Jenkins CI/CD pipeline with GitHub Actions, Docker Hub integration, ~80% test coverage</li>
+                    <li>Prometheus + Grafana monitoring with RabbitMQ for async task processing</li>
                 </ul>
             </div>
 
             <div class="card project-card">
-                <h3>🎬 Hotstar Clone CI/CD</h3>
-                <p class="project-description">
-                    Implemented end-to-end CI/CD pipeline for a Hotstar streaming platform clone using modern DevOps toolchain.
-                </p>
+                <h4>☁️ AWS 3-Tier Architecture WebApp</h4>
+                <p class="tech-stack">Auto Scaling · ELB · S3 · CloudFront · Multi-AZ RDS</p>
                 <ul class="achievements">
-                    <li>Set up multi-node infrastructure with Jenkins, Nexus, SonarQube, and Tomcat across EC2 instances</li>
-                    <li>Automated build and deployment process using shell scripts and Maven</li>
-                    <li>Integrated code quality gates and artifact storage within Jenkins pipeline</li>
-                    <li>Configured Amazon S3 backup solution for application assets</li>
-                    <li>Deployed across Amazon Linux 2 & Ubuntu 24.04 EC2 instances</li>
+                    <li>Auto Scaling Groups and ELB in the application tier for high availability</li>
+                    <li>Amazon S3 + CloudFront for static file hosting and CDN content delivery — 30% latency reduction</li>
+                    <li>Multi-AZ Amazon RDS with CloudWatch monitoring and IAM/Security Group hardening</li>
                 </ul>
             </div>
 
             <div class="card project-card">
-                <h3>🎥 Netflix Clone CI/CD</h3>
-                <p class="project-description">
-                    Deployed a Netflix Clone web application on AWS with a fully automated CI/CD pipeline using Git, GitHub, Jenkins, SonarQube, Nexus, k8s and Docker.
-                </p>
+                <h4>🛡️ Insurance Management System</h4>
+                <p class="tech-stack">Spring Boot · Terraform · Ansible · Kubernetes · Jenkins</p>
                 <ul class="achievements">
-                    <li>Leveraged Apache Tomcat automating the build-test-deploy lifecycle</li>
-                    <li>Implemented code quality checks and artifact versioning</li>
-                    <li>Achieved 70% faster deployments and 40% fewer post-deploy issues</li>
-                    <li>Enabled seamless rollouts using containers</li>
+                    <li>Java/Spring Boot APIs containerized with Docker, orchestrated on Kubernetes (EKS + Minikube)</li>
+                    <li>End-to-end Jenkins CI/CD with automated test, build, and deploy stages</li>
+                    <li>Terraform for reproducible infra + Ansible for server configuration across dev/staging</li>
                 </ul>
             </div>
 
             <div class="card project-card">
-                <h3>AWS 3 Tier Architecture WebApp</h3>
-                <p class="project-description">
-                    Designed and implemented a scalable three-tier architecture on AWS with industry best practices.
-                </p>
+                <h4>🎬 Netflix Clone CI/CD</h4>
+                <p class="tech-stack">Jenkins · SonarQube · Nexus · Kubernetes · Docker</p>
                 <ul class="achievements">
-                    <li>Implemented Auto Scaling Groups and ELB in the application tier for high availability</li>
-                    <li>Utilized Amazon S3 and CloudFront for static file hosting and CDN-based content delivery, reducing latency by 30%</li>
-                    <li>Configured Multi-AZ Amazon RDS with CloudWatch monitoring</li>
-                    <li>Secured the stack using IAM, Security Groups, and VPC best practices</li>
+                    <li>Fully automated build-test-deploy pipeline with code quality gates and artifact versioning</li>
+                    <li>70% faster deployments and 40% fewer post-deploy issues via containerized rollouts</li>
+                    <li>Multi-node setup with Jenkins, Nexus, SonarQube, and Kubernetes on AWS EC2</li>
                 </ul>
             </div>
+
         </div>
     </div>
 </section>
@@ -94,9 +92,24 @@
 <style>
     h2 {
         font-size: 2.5rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         text-align: center;
         color: var(--text);
+    }
+
+    .section-subtitle {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin: 2rem 0 1.25rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid rgba(var(--accent-rgb), 0.2);
+    }
+
+    .personal-subtitle {
+        margin-top: 5rem;
     }
 
     .projects-grid {
@@ -105,21 +118,51 @@
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
+    .featured-grid {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+
     .project-card {
         height: 100%;
-        padding: 1rem;
+        padding: 1.5rem;
+        position: relative;
     }
 
-    .project-card h3 {
-        font-size: 1.5rem;
-        margin: 0 0 1rem 0;
+    .client-badge {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: white;
+        background: linear-gradient(135deg, var(--accent), rgba(var(--accent-rgb), 0.7));
+        padding: 0.2rem 0.75rem;
+        border-radius: 1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .featured-card {
+        border: 1px solid rgba(var(--accent-rgb), 0.3);
+    }
+
+    .project-card h4 {
+        font-size: 1.35rem;
+        margin: 0 0 0.4rem 0;
         color: var(--accent);
-        padding: 1rem;
     }
 
-    .project-description {
-        margin-bottom: 1rem;
-        line-height: 1.6;
+    .project-meta {
+        font-size: 0.875rem;
+        opacity: 0.7;
+        margin: 0 0 0.5rem 0;
+    }
+
+    .tech-stack {
+        font-size: 0.8rem;
+        color: var(--accent);
+        opacity: 0.85;
+        margin: 0 0 1rem 0;
+        line-height: 1.5;
     }
 
     .achievements {
@@ -137,7 +180,8 @@
     }
 
     @media (max-width: 768px) {
-        .projects-grid {
+        .projects-grid,
+        .featured-grid {
             grid-template-columns: 1fr;
         }
     }

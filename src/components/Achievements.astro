@@ -1,0 +1,95 @@
+---
+---
+<section id="about" class="achievements-section">
+    <div class="container">
+        <div class="achievements-grid">
+            <div class="achievement-card">
+                <div class="achievement-icon">🚀</div>
+                <div class="achievement-stat">67%</div>
+                <div class="achievement-label">Faster Deployments</div>
+                <div class="achievement-detail">45min → 15min cycle time · 99.95% SLA for 2M+ users</div>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-icon">💰</div>
+                <div class="achievement-stat">35–40%</div>
+                <div class="achievement-label">Cost Savings</div>
+                <div class="achievement-detail">$40K+ saved via right-sizing, spot instances & IaC automation</div>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-icon">🔧</div>
+                <div class="achievement-stat">67%</div>
+                <div class="achievement-label">Lower MTTR</div>
+                <div class="achievement-detail">2h → 40min via observability & distributed tracing · 30+ zero-downtime deploys</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .achievements-section {
+        padding: 3rem 0;
+        background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.05), rgba(var(--accent-rgb), 0.02));
+        border-top: 1px solid rgba(var(--accent-rgb), 0.15);
+        border-bottom: 1px solid rgba(var(--accent-rgb), 0.15);
+    }
+
+    .achievements-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .achievement-card {
+        text-align: center;
+        padding: 2rem 1.5rem;
+        background: var(--card-bg);
+        border-radius: 1rem;
+        border: 1px solid rgba(var(--accent-rgb), 0.2);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .achievement-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px -8px rgba(var(--accent-rgb), 0.25);
+    }
+
+    .achievement-icon {
+        font-size: 2.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .achievement-stat {
+        font-size: 3rem;
+        font-weight: 800;
+        background: linear-gradient(to right, var(--accent), var(--text));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1.1;
+        margin-bottom: 0.5rem;
+    }
+
+    .achievement-label {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 0.75rem;
+    }
+
+    .achievement-detail {
+        font-size: 0.875rem;
+        color: var(--text);
+        opacity: 0.7;
+        line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+        .achievements-grid {
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+        }
+
+        .achievement-stat {
+            font-size: 2.5rem;
+        }
+    }
+</style>
