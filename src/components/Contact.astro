@@ -83,7 +83,8 @@
 <script>
 import PocketBase from 'pocketbase';
 
-const pb = new PocketBase(import.meta.env.PUBLIC_PB_URL);
+const pbUrl = import.meta.env.PUBLIC_PB_URL || 'https://db.mrsubodh.xyz';
+const pb = new PocketBase(pbUrl);
 
 document.getElementById('contact-form')!.addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -106,13 +107,16 @@ document.getElementById('contact-form')!.addEventListener('submit', async functi
     };
 
     try {
-        await pb.collection('contact_form').create(data);
+        const record = await pb.collection('contact_form').create(data);
+        console.log('Record created:', record);
 
         status.textContent = 'Message sent successfully! I\'ll get back to you soon.';
         status.className = 'form-status success';
         form.reset();
-    } catch (err) {
+    } catch (err: any) {
         console.error('Contact form error:', err);
+        console.error('PB URL used:', pbUrl);
+        console.error('Response:', err?.response);
         status.textContent = 'Something went wrong. Please try again or email me directly.';
         status.className = 'form-status error';
     } finally {
