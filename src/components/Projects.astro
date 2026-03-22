@@ -42,7 +42,7 @@
         </div>
 
         <h3 class="section-subtitle personal-subtitle">Personal Projects</h3>
-        <div class="projects-grid">
+        <div class="projects-grid personal-grid">
 
             <div class="card project-card">
                 <h4>🧠 Flask Quiz Application</h4>
@@ -120,6 +120,11 @@
 
     .featured-grid {
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+
+    .personal-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 6rem;
     }
 
     .project-card {
