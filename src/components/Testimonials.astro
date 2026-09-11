@@ -1,0 +1,89 @@
+---
+// Add real recommendations here before this section will appear on the site —
+// e.g. copy quotes from LinkedIn recommendations or client emails (with permission).
+// The section renders nothing until at least one entry is added, so nothing
+// fabricated ever ships to visitors.
+type Testimonial = {
+    quote: string;
+    name: string;
+    role: string;
+    company?: string;
+};
+
+const testimonials: Testimonial[] = [];
+---
+
+{testimonials.length > 0 && (
+    <section id="testimonials" class="section">
+        <div class="container">
+            <h2>What People Say</h2>
+            <p class="section-description">Feedback from people I've worked with</p>
+            <div class="testimonials-grid">
+                {testimonials.map((t) => (
+                    <div class="card testimonial-card">
+                        <p class="quote">&ldquo;{t.quote}&rdquo;</p>
+                        <div class="author">
+                            <span class="author-name">{t.name}</span>
+                            <span class="author-role">{t.role}{t.company ? ` · ${t.company}` : ''}</span>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+)}
+
+<style>
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        text-align: center;
+        color: var(--text);
+    }
+
+    .section-description {
+        text-align: center;
+        color: var(--text);
+        opacity: 0.7;
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .testimonial-card {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .quote {
+        margin: 0;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--text);
+        opacity: 0.9;
+    }
+
+    .author {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+        margin-top: auto;
+    }
+
+    .author-name {
+        font-weight: 600;
+        color: var(--accent);
+    }
+
+    .author-role {
+        font-size: 0.85rem;
+        color: var(--text);
+        opacity: 0.7;
+    }
+</style>
