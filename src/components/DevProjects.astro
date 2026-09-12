@@ -12,7 +12,7 @@ const projects = [
     {
         title: "SRE Metrics Calculator",
         emoji: "📊",
-        description: "Production-grade incident metrics dashboard — MTTD, MTTR, MTTF, MTBF calculations with SLA compliance tracking, trend analysis, and Gantt-style timeline visualization.",
+        description: "Production-grade incident metrics dashboard featuring MTTD, MTTR, MTTF, MTBF calculations with SLA compliance tracking, trend analysis, and Gantt-style timeline visualization.",
         tech: "Python · Streamlit · SQLite · Pandas",
         github: "https://github.com/tusuii/SRE-metrices-calculator",
         live: "https://sre-metrices-calculator.streamlit.app/",
@@ -30,7 +30,7 @@ const projects = [
     {
         title: "Chaos Theory Simulation",
         emoji: "🌀",
-        description: "Explore deterministic systems that appear random — interactive visualizations of strange attractors, bifurcation diagrams, and sensitivity to initial conditions.",
+        description: "Explore deterministic systems that appear random, with interactive visualizations of strange attractors, bifurcation diagrams, and sensitivity to initial conditions.",
         tech: "Python · CSS",
         github: "https://github.com/tusuii/chaos-theory-simulation",
         live: "https://chaos-theory-simulation.streamlit.app/",
@@ -39,7 +39,7 @@ const projects = [
     {
         title: "Monte Carlo Playground",
         emoji: "🎲",
-        description: "Interactive playground to prove algorithms and concepts using Monte Carlo methods — probability simulations, numerical integration, and stochastic modeling.",
+        description: "Interactive playground to prove algorithms and concepts using Monte Carlo methods: probability simulations, numerical integration, and stochastic modeling.",
         tech: "Python",
         github: "https://github.com/tusuii/monte-carlo-playground",
         live: "https://monte-carlo-playground.streamlit.app/",
@@ -48,7 +48,7 @@ const projects = [
     {
         title: "Music Lab",
         emoji: "🎵",
-        description: "A scientific approach to sound — manipulate frequencies, audio parameters, and sound transformations through a laboratory-style workspace for audio experimentation.",
+        description: "A scientific approach to sound: manipulate frequencies, audio parameters, and sound transformations through a laboratory-style workspace for audio experimentation.",
         tech: "Python · Flask · CSS",
         github: "https://github.com/tusuii/Music-lab",
         live: "https://music-lab.streamlit.app/",
@@ -57,7 +57,7 @@ const projects = [
     {
         title: "Chymistry",
         emoji: "⚗️",
-        description: "An element-merging game — combine basic building blocks of the universe to unlock hundreds of unique items, from simple reactions to cosmic phenomena.",
+        description: "An element-merging game where you combine basic building blocks of the universe to unlock hundreds of unique items, from simple reactions to cosmic phenomena.",
         tech: "Python",
         github: "https://github.com/tusuii/chymistery",
         live: "https://chymistery.streamlit.app/",
@@ -66,7 +66,7 @@ const projects = [
     {
         title: "Algorithms Showdown",
         emoji: "⚔️",
-        description: "Visual algorithm comparisons — watch sorting, searching, and graph algorithms compete side-by-side with real-time animated visualizations.",
+        description: "Visual algorithm comparisons where sorting, searching, and graph algorithms compete side-by-side with real-time animated visualizations.",
         tech: "Python",
         github: "https://github.com/tusuii/algorithms-showdown",
         live: "https://algorithms-showdown.streamlit.app/",
@@ -75,7 +75,7 @@ const projects = [
     {
         title: "Decision Theory Simulation",
         emoji: "🎯",
-        description: "Bridge the gap between raw probability and actionable strategy — simulate complex decision scenarios under uncertainty with interactive tools.",
+        description: "Bridge the gap between raw probability and actionable strategy by simulating complex decision scenarios under uncertainty with interactive tools.",
         tech: "Python · Streamlit · CSS",
         github: "https://github.com/tusuii/probablity-decession-theory-simulation",
         live: "https://probablity-decession-theory-simulation.streamlit.app/",
@@ -84,7 +84,7 @@ const projects = [
     {
         title: "Catalan Zoo",
         emoji: "🐱",
-        description: "A zoo of Catalan numbers — explore hundreds of combinatorial objects counted by this fascinating mathematical sequence through interactive exhibits.",
+        description: "A zoo of Catalan numbers, exploring hundreds of combinatorial objects counted by this fascinating mathematical sequence through interactive exhibits.",
         tech: "Python · CSS",
         github: "https://github.com/tusuii/catalan-zoo",
         live: "https://catalan-zoo.streamlit.app/",
@@ -93,7 +93,7 @@ const projects = [
     {
         title: "Combinatorial Game Theory",
         emoji: "🎮",
-        description: "Simulate combinatorial game theory scenarios with an interactive Streamlit app — explore Nim, Hackenbush, and other mathematical games.",
+        description: "Simulate combinatorial game theory scenarios with an interactive Streamlit app covering Nim, Hackenbush, and other mathematical games.",
         tech: "Python · Streamlit · CSS",
         github: "https://github.com/tusuii/CGT",
         live: "https://com-game-theory.streamlit.app/",
@@ -102,34 +102,60 @@ const projects = [
     {
         title: "L-System Visualization",
         emoji: "🌿",
-        description: "Visualize Lindenmayer systems — generate fractal patterns and biological growth models through recursive string rewriting and turtle graphics.",
+        description: "Visualize Lindenmayer systems that generate fractal patterns and biological growth models through recursive string rewriting and turtle graphics.",
         tech: "Python",
         github: "https://github.com/tusuii/ltree-visualization",
         live: "https://ltree-visualization.streamlit.app/",
         image: "https://opengraph.githubassets.com/1/tusuii/ltree-visualization",
     },
 ];
+
+const projectsWithTags = projects.map((project) => ({
+    ...project,
+    tags: project.tech.split("·").map((t) => t.trim()),
+}));
+
+const tagCounts = new Map<string, number>();
+projectsWithTags.forEach((project) => {
+    project.tags.forEach((tag) => {
+        tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+    });
+});
+
+const filterTags = Array.from(tagCounts.entries())
+    .filter(([, count]) => count > 1)
+    .sort((a, b) => b[1] - a[1])
+    .map(([tag]) => tag);
+
+const SPLINE_URL = "https://my.spline.design/wizardroomcopy-9IGUhSGPKjKCaCtrY3qDU5z1/";
 ---
 
 <section id="dev-projects" class="section">
     <div class="container">
         <h2>Developer Projects</h2>
-        <p class="section-description">Python apps I build for fun — simulations, visualizers, and developer tools</p>
+        <p class="section-description">Python apps I build for fun: simulations, visualizers, and developer tools</p>
 
-        <div class="spline-wrapper">
-            <iframe
-                src="https://my.spline.design/wizardroomcopy-9IGUhSGPKjKCaCtrY3qDU5z1/"
-                frameborder="0"
-                width="100%"
-                height="400"
-                loading="lazy"
-                title="3D Animation"
-            ></iframe>
+        <div class="spline-wrapper" id="spline-wrapper" data-src={SPLINE_URL}>
+            <div class="spline-skeleton" id="spline-skeleton">
+                <div class="skeleton-shimmer" aria-hidden="true"></div>
+                <div class="skeleton-fallback" id="spline-fallback" hidden>
+                    <span class="skeleton-icon" aria-hidden="true">✨</span>
+                    <p>Interactive 3D scene</p>
+                    <a href={SPLINE_URL} target="_blank" rel="noopener noreferrer">Open in new tab</a>
+                </div>
+            </div>
         </div>
 
-        <div class="dev-grid">
-            {projects.map((project) => (
-                <div class="dev-card card">
+        <div class="project-filters" role="group" aria-label="Filter projects by technology">
+            <button type="button" class="filter-btn is-active" data-filter="all" aria-pressed="true">All</button>
+            {filterTags.map((tag) => (
+                <button type="button" class="filter-btn" data-filter={tag} aria-pressed="false">{tag}</button>
+            ))}
+        </div>
+
+        <div class="dev-grid" id="dev-grid">
+            {projectsWithTags.map((project) => (
+                <div class="dev-card card" data-tags={project.tags.join("|")}>
                     <a href={project.live || project.github} target="_blank" rel="noopener noreferrer" class="card-image-link">
                         <div class="card-image">
                             <img src={project.image} alt={project.title} loading="lazy" />
@@ -155,6 +181,7 @@ const projects = [
                 </div>
             ))}
         </div>
+        <p class="no-results" id="no-results" role="status" aria-live="polite" hidden>No projects match this filter.</p>
     </div>
 </section>
 
@@ -175,15 +202,141 @@ const projects = [
     }
 
     .spline-wrapper {
+        position: relative;
+        height: 400px;
         border-radius: 1rem;
         overflow: hidden;
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        border: 1px solid rgba(59, 130, 246, 0.15);
+        border: 1px solid rgba(var(--accent-rgb), 0.15);
+        background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
     }
 
     .spline-wrapper iframe {
         display: block;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    .spline-wrapper iframe.is-loaded {
+        opacity: 1;
+    }
+
+    .spline-skeleton {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: opacity 0.3s ease;
+    }
+
+    .spline-skeleton.is-hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .skeleton-shimmer {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            100deg,
+            transparent 30%,
+            rgba(var(--accent-rgb), 0.12) 50%,
+            transparent 70%
+        );
+        background-size: 200% 100%;
+        animation: shimmer 1.8s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+        0% { background-position: 150% 0; }
+        100% { background-position: -50% 0; }
+    }
+
+    .skeleton-fallback {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        text-align: center;
+        color: var(--text);
+    }
+
+    .skeleton-icon {
+        font-size: 2rem;
+    }
+
+    .skeleton-fallback p {
+        margin: 0;
+        opacity: 0.75;
+        font-size: 0.95rem;
+    }
+
+    .skeleton-fallback a {
+        color: var(--accent);
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-decoration: none;
+    }
+
+    .skeleton-fallback a:hover {
+        text-decoration: underline;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .skeleton-shimmer {
+            animation: none;
+        }
+    }
+
+    .project-filters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.6rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .filter-btn {
+        padding: 0.4rem 1rem;
+        border-radius: 999px;
+        border: 1.5px solid rgba(var(--accent-rgb), 0.25);
+        background: var(--card-bg);
+        color: var(--text);
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+    }
+
+    .filter-btn.is-active {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: white;
+    }
+
+    .no-results {
+        text-align: center;
+        color: var(--text);
+        opacity: 0.7;
+        padding: 2rem 0;
+    }
+
+    .dev-card.is-filtered-out {
+        display: none;
     }
 
     .dev-grid {
@@ -302,8 +455,91 @@ const projects = [
             grid-template-columns: 1fr;
         }
 
-        .spline-wrapper iframe {
+        .spline-wrapper {
             height: 250px;
         }
     }
 </style>
+
+<script>
+    const wrapper = document.getElementById('spline-wrapper');
+    const skeleton = document.getElementById('spline-skeleton');
+    const fallback = document.getElementById('spline-fallback');
+    const SPLINE_LOAD_TIMEOUT_MS = 9000;
+
+    function loadSpline() {
+        if (!wrapper || wrapper.dataset.loaded) return;
+        wrapper.dataset.loaded = 'true';
+
+        const src = wrapper.getAttribute('data-src');
+        if (!src) return;
+
+        const iframe = document.createElement('iframe');
+        iframe.src = src;
+        iframe.title = '3D Animation';
+        iframe.loading = 'lazy';
+        iframe.setAttribute('frameborder', '0');
+
+        let settled = false;
+        const timeoutId = window.setTimeout(() => {
+            if (settled) return;
+            settled = true;
+            fallback?.removeAttribute('hidden');
+        }, SPLINE_LOAD_TIMEOUT_MS);
+
+        iframe.addEventListener('load', () => {
+            if (settled) return;
+            settled = true;
+            window.clearTimeout(timeoutId);
+            iframe.classList.add('is-loaded');
+            skeleton?.classList.add('is-hidden');
+        });
+
+        wrapper.appendChild(iframe);
+    }
+
+    if (wrapper) {
+        if ('IntersectionObserver' in window) {
+            const splineObserver = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            loadSpline();
+                            splineObserver.disconnect();
+                        }
+                    });
+                },
+                { rootMargin: '200px' }
+            );
+            splineObserver.observe(wrapper);
+        } else {
+            loadSpline();
+        }
+    }
+
+    // Project filtering
+    const filterButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('.filter-btn'));
+    const projectCards = Array.from(document.querySelectorAll<HTMLElement>('#dev-grid .dev-card'));
+    const noResults = document.getElementById('no-results');
+
+    filterButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const filter = btn.getAttribute('data-filter') || 'all';
+
+            filterButtons.forEach((b) => {
+                b.classList.toggle('is-active', b === btn);
+                b.setAttribute('aria-pressed', String(b === btn));
+            });
+
+            let visibleCount = 0;
+            projectCards.forEach((card) => {
+                const tags = (card.getAttribute('data-tags') || '').split('|');
+                const matches = filter === 'all' || tags.includes(filter);
+                card.classList.toggle('is-filtered-out', !matches);
+                if (matches) visibleCount++;
+            });
+
+            if (noResults) noResults.hidden = visibleCount !== 0;
+        });
+    });
+</script>

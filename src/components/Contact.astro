@@ -54,7 +54,7 @@
             </div>
 
             <form class="contact-form card" id="contact-form">
-                <!-- Honeypot field — hidden from humans, bots fill it -->
+                <!-- Honeypot field: hidden from humans, bots fill it -->
                 <div class="form-group" style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
                     <label for="website">Website</label>
                     <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
@@ -79,7 +79,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
                     <span class="btn-text">Send Message</span>
                 </button>
-                <p class="form-status" id="form-status"></p>
+                <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
             </form>
         </div>
     </div>
@@ -105,7 +105,7 @@ document.getElementById('contact-form')!.addEventListener('submit', async functi
     const btnText = btn.querySelector('.btn-text') as HTMLSpanElement;
     const status = document.getElementById('form-status')!;
 
-    // Honeypot check — if filled, silently reject (bot detected)
+    // Honeypot check: if filled, silently reject (bot detected)
     const honeypot = (form.querySelector('#website') as HTMLInputElement).value;
     if (honeypot) {
         status.textContent = 'Message sent successfully! I\'ll get back to you soon.';
@@ -195,7 +195,7 @@ document.getElementById('contact-form')!.addEventListener('submit', async functi
         margin: 0 auto;
     }
 
-    /* Left column — info */
+    /* Left column: info */
     .contact-info-col {
         display: flex;
         flex-direction: column;
@@ -267,7 +267,7 @@ document.getElementById('contact-form')!.addEventListener('submit', async functi
         transform: translateY(-2px);
     }
 
-    /* Right column — form */
+    /* Right column: form */
     .contact-form {
         display: flex;
         flex-direction: column;
