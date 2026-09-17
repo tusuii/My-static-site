@@ -1,0 +1,175 @@
+---
+const categories = [
+    {
+        name: "Dev Tools",
+        services: [
+            { icon: "🛠️", name: "IT Tools", description: "100+ developer utilities" },
+            { icon: "🧪", name: "CyberChef", description: "Encode, decode, encrypt, hash" },
+            { icon: "🎨", name: "Excalidraw", description: "Infinite whiteboard & diagrams" },
+            { icon: "🖌️", name: "MiniPaint", description: "Browser-based image editor" },
+            { icon: "🏎️", name: "HexGL", description: "WebGL racing game" },
+        ],
+    },
+    {
+        name: "File & Storage",
+        services: [
+            { icon: "📁", name: "Filebrowser", description: "Browse and manage server files" },
+            { icon: "📋", name: "Pastebin", description: "Self-hosted paste & share" },
+            { icon: "📄", name: "BentoPDF", description: "Merge, split, OCR, convert PDFs" },
+        ],
+    },
+    {
+        name: "Productivity",
+        services: [
+            { icon: "📌", name: "Nullboard", description: "Minimal Kanban board" },
+            { icon: "⌨️", name: "Rustpad", description: "Collaborative code pad" },
+        ],
+    },
+    {
+        name: "Communication & Feeds",
+        services: [
+            { icon: "🔔", name: "ntfy", description: "Push notification server" },
+            { icon: "💬", name: "IRC", description: "Self-hosted IRC (chat.mrsubodh.xyz)" },
+            { icon: "📰", name: "RSS Reader", description: "Feed aggregator" },
+        ],
+    },
+    {
+        name: "Backend & DevOps",
+        services: [
+            { icon: "🐦", name: "Woodpecker CI", description: "Lightweight CI/CD pipelines" },
+            { icon: "🗄️", name: "PocketBase", description: "Open-source backend as a service" },
+            { icon: "📊", name: "Beszel", description: "Server & Docker monitoring" },
+        ],
+    },
+];
+---
+
+<section id="infrastructure" class="section">
+    <div class="container">
+        <h2>⚡ Personal Cloud Infrastructure</h2>
+        <p class="section-description">
+            A homelab of self-hosted tools I run and maintain on my own server
+        </p>
+
+        <div class="infra-grid">
+            {categories.map((cat) => (
+                <div class="card infra-category">
+                    <h3>{cat.name}</h3>
+                    <div class="infra-services">
+                        {cat.services.map((svc) => (
+                            <div class="infra-service">
+                                <span class="infra-icon" aria-hidden="true">{svc.icon}</span>
+                                <div class="infra-text">
+                                    <p class="infra-name">{svc.name}</p>
+                                    <p class="infra-desc">{svc.description}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            ))}
+        </div>
+
+        <div class="infra-cta">
+            <a href="https://homer.mrsubodh.xyz/" target="_blank" rel="noopener noreferrer" class="cta-btn">
+                View Live Dashboard
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        text-align: center;
+        color: var(--text);
+    }
+
+    .section-description {
+        text-align: center;
+        color: var(--text);
+        opacity: 0.7;
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .infra-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .infra-category h3 {
+        font-size: 1.15rem;
+        margin: 0 0 1rem 0;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .infra-services {
+        display: flex;
+        flex-direction: column;
+        gap: 0.9rem;
+    }
+
+    .infra-service {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .infra-icon {
+        font-size: 1.25rem;
+        line-height: 1.4;
+        flex-shrink: 0;
+    }
+
+    .infra-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.1rem;
+    }
+
+    .infra-name {
+        margin: 0;
+        font-weight: 600;
+        color: var(--text);
+        font-size: 0.95rem;
+    }
+
+    .infra-desc {
+        margin: 0;
+        font-size: 0.85rem;
+        color: var(--text);
+        opacity: 0.7;
+        line-height: 1.4;
+    }
+
+    .infra-cta {
+        display: flex;
+        justify-content: center;
+    }
+
+    .cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        background: var(--accent);
+        color: white;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+
+    .cta-btn:hover {
+        background: var(--accent-light);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.3);
+    }
+</style>
