@@ -1,5 +1,28 @@
 ---
 const BMC_URL = "https://buymeacoffee.com/subodhka";
+
+const reasons = [
+    {
+        icon: "🚫",
+        title: "Ad-free, always",
+        description: "Every tool in the Developer Projects section runs with zero ads, zero trackers, and no paywalls.",
+    },
+    {
+        icon: "🖥️",
+        title: "Real server costs",
+        description: "15+ self-hosted services (dashboard, CI, backups, monitoring) run on hardware I pay for every month.",
+    },
+    {
+        icon: "🛠️",
+        title: "Actively maintained",
+        description: "Bug fixes and new features come out of my own time, not a company roadmap or a funding round.",
+    },
+    {
+        icon: "📖",
+        title: "Open source",
+        description: "Every project here is public on GitHub, free to fork, learn from, or build on.",
+    },
+];
 ---
 
 <section id="support" class="section">
@@ -17,23 +40,41 @@ const BMC_URL = "https://buymeacoffee.com/subodhka";
             <h2>Enjoying what you see?</h2>
             <p class="support-copy">
                 This site and everything in the infrastructure section above runs on a server
-                I pay for out of pocket. If any of it has been useful to you, a coffee helps
-                keep the lights on.
+                I pay for out of pocket. Here's what a coffee actually goes toward.
             </p>
-            <a href={BMC_URL} target="_blank" rel="noopener noreferrer" class="support-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
-                    <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/>
-                </svg>
-                Buy me a coffee
-            </a>
+
+            <div class="support-reasons">
+                {reasons.map((reason) => (
+                    <div class="reason">
+                        <span class="reason-icon" aria-hidden="true">{reason.icon}</span>
+                        <div class="reason-text">
+                            <p class="reason-title">{reason.title}</p>
+                            <p class="reason-desc">{reason.description}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            <div class="support-action">
+                <div class="qr-wrap">
+                    <img src="/bmc-qr.svg" alt="QR code linking to buymeacoffee.com/subodhka" width="140" height="140" />
+                    <p class="qr-label">Scan to support</p>
+                </div>
+                <a href={BMC_URL} target="_blank" rel="noopener noreferrer" class="support-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
+                        <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/>
+                    </svg>
+                    Buy me a coffee
+                </a>
+            </div>
         </div>
     </div>
 </section>
 
 <style>
     .support-card {
-        max-width: 620px;
+        max-width: 780px;
         margin: 0 auto;
         text-align: center;
         background: var(--card-bg);
@@ -67,7 +108,77 @@ const BMC_URL = "https://buymeacoffee.com/subodhka";
         line-height: 1.65;
         color: var(--text);
         opacity: 0.8;
-        margin: 0 0 1.75rem 0;
+        margin: 0 auto 2rem;
+        max-width: 520px;
+    }
+
+    .support-reasons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        text-align: left;
+        margin-bottom: 2.5rem;
+        padding-bottom: 2.5rem;
+        border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .reason {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .reason-icon {
+        font-size: 1.4rem;
+        line-height: 1.3;
+        flex-shrink: 0;
+    }
+
+    .reason-title {
+        margin: 0 0 0.2rem 0;
+        font-weight: 600;
+        color: var(--text);
+        font-size: 0.95rem;
+    }
+
+    .reason-desc {
+        margin: 0;
+        font-size: 0.85rem;
+        color: var(--text);
+        opacity: 0.7;
+        line-height: 1.5;
+    }
+
+    .support-action {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+    }
+
+    .qr-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .qr-wrap img {
+        display: block;
+        width: 120px;
+        height: 120px;
+        padding: 0.6rem;
+        background: #ffffff;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    .qr-label {
+        margin: 0;
+        font-size: 0.8rem;
+        color: var(--text);
+        opacity: 0.65;
     }
 
     .support-btn {
@@ -102,6 +213,14 @@ const BMC_URL = "https://buymeacoffee.com/subodhka";
 
         h2 {
             font-size: 1.5rem;
+        }
+
+        .support-reasons {
+            grid-template-columns: 1fr;
+        }
+
+        .support-action {
+            gap: 1.5rem;
         }
     }
 </style>
